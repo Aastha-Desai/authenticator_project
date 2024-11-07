@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Google Authentication</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <!-- Include Firebase SDKs -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBLC-oSqFicaQskoxgxo35JUURCtmDkSqE",
+            authDomain: "authenticator-1683e.firebaseapp.com",
+            databaseURL: "https://authenticator-1683e-default-rtdb.firebaseio.com",
+            projectId: "authenticator-1683e",
+            storageBucket: "authenticator-1683e.appspot.com",
+            messagingSenderId: "493299120770",
+            appId: "1:493299120770:web:c58dde51881e0e59d5529b",
+            measurementId: "G-S3KJYB5GSW"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Login function
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginButton = document.getElementById("login-button");
+            loginButton.onclick = async function() {
+                const provider = new GoogleAuthProvider();
+                try {
+                    const result = await signInWithPopup(auth, provider);
+                    const user = result.user;
+                    console.log("User logged in:", user);
+                    // Redirect to user dashboard after successful login
+                    window.location.href = "user-dashboard.html"; // Ensure this file exists
+                } catch (error) {
+                    console.error("Error during login:", error);
+                }
+            };
+        });
+    </script>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center content on the page */
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f6f8;
+        }
+
+        /* Container styling */
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        /* Heading styling */
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        #login-button {
+            background-color: #4285f4;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #login-button:hover {
+            background-color: #357ae8;
+        }
+
+        #login-button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login with Google</h1>
+        <button id="login-button">Login with Google</button>
+    </div>
+</body>
+</html>

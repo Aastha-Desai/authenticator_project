@@ -1,0 +1,100 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.ocean {
+    background-color: #0d2b3a;
+    color: #fff;
+}
+
+.forest {
+    background-color: #2c6e49;
+    color: #fff;
+}
+
+.dashboard-container {
+    width: 95%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 20px auto;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section h3 {
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.task-input, .reminder-input, .date-input {
+    width: calc(100% - 60px);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.add-btn {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #357ae8;
+}
+
+.list-item {
+    background-color: #e8f0fe;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    position: relative;
+}
+
+.task-checkbox {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+#calendar {
+    margin-top: 20px;
+}
+
+#progress-summary p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Dropdown for theme selection */
+#theme {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 1.2em;
+}

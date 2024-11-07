@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome to Your Productivity Hub</h2>
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <label for="theme">Choose Theme:</label>
+            <select id="theme" onchange="changeTheme(this.value)">
+                <option value="default">Default</option>
+                <option value="dark">Dark Mode</option>
+                <option value="ocean">Ocean</option>
+                <option value="forest">Forest</option>
+            </select>
+        </div>
+
+        <!-- Task Manager Section with Calendar -->
+        <div class="section">
+            <h3>Task Manager</h3>
+            <input type="text" id="task-input" class="task-input" placeholder="Enter a new task">
+            <input type="date" id="task-date" class="date-input" placeholder="Select due date">
+            <button class="add-btn" onclick="addTask()">Add Task</button>
+            <ul id="task-list" class="list"></ul>
+        </div>
+
+        <!-- Calendar Display -->
+        <div id="calendar"></div>
+
+        <!-- Reminders Section -->
+        <div class="section">
+            <h3>Reminders</h3>
+            <input type="text" id="reminder-input" class="reminder-input" placeholder="Set a reminder">
+            <button class="add-btn" onclick="addReminder()">Add Reminder</button>
+            <ul id="reminder-list" class="list"></ul>
+        </div>
+
+        <!-- Progress Summary Section -->
+        <div class="section">
+            <h3>Weekly/Monthly Progress Summary</h3>
+            <div id="progress-summary">
+                <p>Total Tasks: <span id="total-tasks">0</span></p>
+                <p>Completed Tasks: <span id="completed-tasks">0</span></p>
+                <p>Average Completion Time: <span id="avg-completion-time">N/A</span></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
