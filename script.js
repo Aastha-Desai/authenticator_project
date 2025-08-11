@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to add a task to the list
     addBtn.addEventListener('click', () => {
         if (taskInput.value.trim() === '') {
-            return; // Don't add empty tasks
+            return; 
         }
 
         // Create a new task item
@@ -36,17 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Flatpickr calendar
     flatpickr(calendarElement, {
-        inline: true,  // This will make the calendar visible on the page
-        dateFormat: "Y-m-d",  // Format the date as Year-Month-Day
+        inline: true,  
+        dateFormat: "Y-m-d",  
         onChange: function(selectedDates, dateStr, instance) {
-            dateInput.value = dateStr; // Populate the date input with selected date
+            dateInput.value = dateStr; 
         }
     });
 
-    // Theme change function
+   
     function changeTheme(theme) {
-        document.body.classList.remove("dark", "ocean", "forest");  // Remove all theme classes
-        document.body.classList.add(theme);  // Add the selected theme
+        document.body.classList.remove("dark", "ocean", "forest");  
+        document.body.classList.add(theme); 
     }
 
     // Handle theme selection change
